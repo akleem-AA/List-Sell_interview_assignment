@@ -1,4 +1,7 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Assignment overView 
+I have recieve this assignment from the list&sell pvt limt this is the assignement overView [LSTaskReactNative (1).pdf](https://github.com/akleem-AA/List-Sell_interview_assignment/files/13484176/LSTaskReactNative.1.pdf)
+
 
 # Getting Started
 

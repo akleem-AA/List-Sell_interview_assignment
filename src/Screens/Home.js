@@ -60,7 +60,7 @@ const Home = (props) => {
 
   // Call the fetchData function
   const renderCardItem = ({ item }) => (
-    <View style={{ margin: 5 }}>
+    <View style={{ margin: 5, alignSelf: 'center' }}>
       <CustomCard data={item} />
       <CustomButton name={item?.name?.common || 'not available'} onPress={() => handleCard(item)}
         maxWidth={190}
@@ -74,7 +74,7 @@ const Home = (props) => {
 
   if (loading) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.loaderStyle}>
         <ActivityIndicator size="large" color="blue" />
       </View>
     );
@@ -98,7 +98,7 @@ const Home = (props) => {
         </View>
 
         {/* render APi list */}
-        <View style={{ margin: 10, width: '100%', alignSelf: 'center' }}>
+        <View style={styles.cardView}>
           <FlatList
             data={data}
             renderItem={renderCardItem}
@@ -106,7 +106,7 @@ const Home = (props) => {
             horizontal
             showsHorizontalScrollIndicator={false}
             ListEmptyComponent={() => (
-              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', width: 350, height: 200 }}>
+              <View style={styles.emptyList}>
                 <Text>Data not found...</Text>
               </View>
             )}
@@ -114,7 +114,7 @@ const Home = (props) => {
         </View>
 
         {/* //refresh button */}
-        <View style={{ width: '80%', alignSelf: 'center', marginTop: 10 }}>
+        <View style={styles.buttonView}>
           <CustomButton
             name="Refresh Data"
             backgroundColor='black'
@@ -141,6 +141,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     // alignItems:'center'
   },
+  loaderStyle: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   headingText: {
     margin: 5,
 
@@ -160,5 +165,23 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     fontSize: 18
   },
+  buttonView: {
+    width: '80%',
+    alignSelf: 'center',
+    marginTop: 10
+  },
+  cardView: {
+    margin: 10,
+    width: '100%',
+    alignSelf: 'center'
+  },
+  emptyList: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    width: 350,
+    height: 200
+  }
 
 })

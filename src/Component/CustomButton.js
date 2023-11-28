@@ -19,7 +19,7 @@ const CustomButton = ({
             maxWidth && { maxWidth: maxWidth }
             ]}>
             {imageURL &&
-                <View style={{ width: 22, height: 22, paddingLeft: 10 }}>
+                <View style={styles.imageView}>
                     <Image source={{ uri: url }} style={{ width: '100%', height: '100%' }} resizeMode='cover' />
                 </View>
             }
@@ -43,5 +43,10 @@ const styles = StyleSheet.create({
     buttonText: {
         padding: 10,
         textAlign: 'center'
-    }
+    },
+    imageView: {
+        width: 22,
+        height: 22,
+        paddingLeft: 10
+    },
 })
